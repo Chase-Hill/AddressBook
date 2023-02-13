@@ -13,20 +13,20 @@ class PersonController {
         let newPerson = Person(name: name, address: address)
         group.people.append(newPerson)
         
-        GroupController.sharedInstance.save()
+        GroupController.sharedInstance.saveContactsToDisk()
     }
     
     static func updatePerson(personToUpdate: Person, newName: String, newAddress: String) {
         personToUpdate.name = newName
         personToUpdate.address = newAddress
         
-        GroupController.sharedInstance.save()
+        GroupController.sharedInstance.saveContactsToDisk()
     }
     
     static func deletePerson(personToDelete: Person, from group: Group) {
         guard let index = group.people.firstIndex(of: personToDelete) else {return}
         group.people.remove(at: index)
         
-        GroupController.sharedInstance.save()
+        GroupController.sharedInstance.saveContactsToDisk()
     }
 }
