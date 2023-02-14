@@ -133,6 +133,9 @@
                                                     <rect key="frame" x="325" y="0.0" width="52" height="34.666666666666664"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="favoriteButtonTapped:" destination="D3S-S2-h7u" eventType="touchUpInside" id="1G3-Sn-cU2"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -145,6 +148,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favoriteButton" destination="Lgl-Lp-6k9" id="cxB-Cr-MWl"/>
+                                    <outlet property="personNameLabel" destination="mSI-rQ-Nmo" id="I2C-vC-ekf"/>
                                     <segue destination="ogI-pH-O3g" kind="show" identifier="toContactDetails" id="39U-Z2-Sk8"/>
                                 </connections>
                             </tableViewCell>
