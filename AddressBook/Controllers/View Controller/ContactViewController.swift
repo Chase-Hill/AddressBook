@@ -15,6 +15,7 @@ class ContactViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    var personObjectReciever: Person?
 
     /*
     // MARK: - Navigation

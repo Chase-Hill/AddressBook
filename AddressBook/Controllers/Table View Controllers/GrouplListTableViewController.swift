@@ -35,6 +35,7 @@ class GrouplListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Cell Identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
         let groupDisplayed = GroupController.sharedInstance.groups[indexPath.row]
         var cellConfig = cell.defaultContentConfiguration()

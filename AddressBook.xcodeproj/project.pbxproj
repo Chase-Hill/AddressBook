@@ -144,8 +144,8 @@
 		F7FB3DE327163FDB0091D1B1 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				4109F6CF2833DDC500FD585D /* Storyboards */,
 				F7040FF52716526500B913AC /* Resourses */,
+				4109F6CF2833DDC500FD585D /* Storyboards */,
 				AF975412299AE75A00F79211 /* Models */,
 				AF975415299AE9FC00F79211 /* Controllers */,
 			);
