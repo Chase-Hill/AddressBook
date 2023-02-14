@@ -98,6 +98,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sc7-DD-rDd">
                                                     <rect key="frame" x="312" y="0.0" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleSwitch:" destination="pMq-Sy-8qn" eventType="valueChanged" id="ETG-2v-QBm"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </stackView>
@@ -168,6 +171,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="groupNameTextField" destination="zeD-At-LfT" id="szK-lw-Ku0"/>
+                        <outlet property="switchButton" destination="sc7-DD-rDd" id="Tlm-xo-Lve"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uav-gm-2zP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

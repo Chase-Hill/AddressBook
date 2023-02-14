@@ -10,10 +10,20 @@ import UIKit
 class PersonListTableViewController: UITableViewController {
 
     var groupReciever: Group?
+
+    private var filteredPeople: [Person] {
+        if switchButton.isOn {
+            return groupReciever?.people.filter { $0.isFavorite } ?? []
+        } else {
+            return groupReciever?.people ?? []
+        }
+    }
     
     // MARK: - Outlet
     
     @IBOutlet weak var groupNameTextField: UITextField!
+    
+    @IBOutlet weak var switchButton: UISwitch!
     
     // MARK: - LifeCycle
     
@@ -41,6 +51,10 @@ class PersonListTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    @IBAction func toggleSwitch(_ sender: Any) {
+        tableView.reloadData()
+    }
+    
     func updateViews() {
         guard let groupReciever = groupReciever else {return}
         groupNameTextField.text = groupReciever.name
@@ -49,13 +63,13 @@ class PersonListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupReciever?.people.count ?? 0
+        return filteredPeople.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell else {return UITableViewCell()}
 
-        let personObject = groupReciever?.people[indexPath.row]
+        let personObject = filteredPeople[indexPath.row]
         cell.person = personObject
         cell.delegate = self
         
@@ -65,7 +79,7 @@ class PersonListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let group = groupReciever else {return}
-            let person = group.people[indexPath.row]
+            let person = filteredPeople[indexPath.row]
             PersonController.deletePerson(personToDelete: person, from: group)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -77,7 +91,7 @@ class PersonListTableViewController: UITableViewController {
         if segue.identifier == "toContactDetails" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 if let destination = segue.destination as? ContactViewController {
-                    let person = groupReciever?.people[indexPath.row]
+                    let person = filteredPeople[indexPath.row]
                     destination.personObjectReciever = person
                 }
             }
