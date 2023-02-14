@@ -201,10 +201,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="E0c-NQ-2GK">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="star.fill" catalog="system" id="rcg-Wu-Row"/>
+                            <barButtonItem title="Item" image="star.fill" catalog="system" id="rcg-Wu-Row">
+                                <connections>
+                                    <action selector="favoriteButtonTapped:" destination="ogI-pH-O3g" id="dyy-tL-6kf"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="save" id="N2a-NS-kfO">
                                 <connections>
-                                    <action selector="saveButtonTapped:" destination="ogI-pH-O3g" id="BSl-Pu-dcW"/>
+                                    <action selector="saveButtonTapped:" destination="ogI-pH-O3g" id="SIp-3c-dOp"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -212,6 +216,7 @@
                     <connections>
                         <outlet property="contactAddressTextField" destination="W5m-hO-kFL" id="rGo-5j-LXk"/>
                         <outlet property="contactNameTextField" destination="X3Y-WB-HD3" id="FmM-IH-m6K"/>
+                        <outlet property="favoriteButton" destination="rcg-Wu-Row" id="nbo-qk-h9z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ce-RM-BUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

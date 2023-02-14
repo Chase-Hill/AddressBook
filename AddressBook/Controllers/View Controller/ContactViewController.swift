@@ -17,6 +17,8 @@ class ContactViewController: UIViewController {
     
     @IBOutlet weak var contactAddressTextField: UITextField!
     
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
+    
     // MARK: - LifeCycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +35,17 @@ class ContactViewController: UIViewController {
         guard let person = personObjectReciever else {return}
         contactNameTextField.text = person.name
         contactAddressTextField.text = person.address
+        
+        updateFavoriteButton()
+    }
+    
+    // MARK: - Helper
+    
+    func updateFavoriteButton() {
+        guard let person = personObjectReciever else {return}
+        let favoriteImageName = person.isFavorite ? "star.fill" : "star"
+        let favoriteImage = UIImage(systemName: favoriteImageName)
+        favoriteButton.image = favoriteImage
     }
     
     // MARK: - Actions
@@ -44,4 +57,11 @@ class ContactViewController: UIViewController {
         PersonController.updatePerson(personToUpdate: person, newName: name, newAddress: address)
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        guard let person = personObjectReciever else {return}
+        PersonController.toggleFavorite(person: person)
+        updateFavoriteButton()
+    }
+    
 }
