@@ -53,13 +53,11 @@ class PersonListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        
-        guard let groupRetrieved = groupReciever else {return UITableViewCell() }
-        let personObject = groupRetrieved.people[indexPath.row]
-        var config = cell.defaultContentConfiguration()
-        config.text = personObject.name
-        cell.contentConfiguration = config
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell else {return UITableViewCell()}
+
+        let personObject = groupReciever?.people[indexPath.row]
+        cell.person = personObject
+        cell.delegate = self
         
         return cell
     }
@@ -84,5 +82,13 @@ class PersonListTableViewController: UITableViewController {
                 }
             }
         }
+    }
+}
+
+extension PersonListTableViewController: PersonTableViewCellDelegate {
+    func toggleFavoriteButtonTapped(cell: PersonTableViewCell) {
+        guard let personIndex = cell.person else {return}
+        PersonController.toggleFavorite(person: personIndex)
+        cell.updateViews()
     }
 }

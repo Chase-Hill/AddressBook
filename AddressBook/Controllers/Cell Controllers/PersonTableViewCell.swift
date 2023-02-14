@@ -40,8 +40,6 @@ class PersonTableViewCell: UITableViewCell {
         favoriteButton.setImage(favoriteImage, for: .normal)
     }
     
-    
-    
     // MARK: - Action
     
     @IBAction func favoriteButtonTapped(_ sender: Any) {
