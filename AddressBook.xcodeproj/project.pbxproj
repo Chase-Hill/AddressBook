@@ -15,7 +15,7 @@
 		AF97541C299AF99200F79211 /* GrouplListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF97541B299AF99200F79211 /* GrouplListTableViewController.swift */; };
 		AF97541E299AF9E200F79211 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF97541D299AF9E200F79211 /* ContactViewController.swift */; };
 		AF975422299B036200F79211 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF975421299B036200F79211 /* GroupTableViewCell.swift */; };
-		AF97542B299C3A2D00F79211 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF97542A299C3A2D00F79211 /* PeopleTableViewCell.swift */; };
+		AF97542B299C3A2D00F79211 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF97542A299C3A2D00F79211 /* PersonTableViewCell.swift */; };
 		F7FB3DE527163FDB0091D1B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DE427163FDB0091D1B1 /* AppDelegate.swift */; };
 		F7FB3DE727163FDB0091D1B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DE627163FDB0091D1B1 /* SceneDelegate.swift */; };
 		F7FB3DEC27163FDB0091D1B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB3DEA27163FDB0091D1B1 /* Main.storyboard */; };
@@ -32,7 +32,7 @@
 		AF97541B299AF99200F79211 /* GrouplListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrouplListTableViewController.swift; sourceTree = "<group>"; };
 		AF97541D299AF9E200F79211 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		AF975421299B036200F79211 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
-		AF97542A299C3A2D00F79211 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		AF97542A299C3A2D00F79211 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		F7FB3DE127163FDB0091D1B1 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FB3DE427163FDB0091D1B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7FB3DE627163FDB0091D1B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				AF975421299B036200F79211 /* GroupTableViewCell.swift */,
-				AF97542A299C3A2D00F79211 /* PeopleTableViewCell.swift */,
+				AF97542A299C3A2D00F79211 /* PersonTableViewCell.swift */,
 			);
 			path = "Cell Controllers";
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 				F7FB3DE727163FDB0091D1B1 /* SceneDelegate.swift in Sources */,
 				AF975411299AE75400F79211 /* Group.swift in Sources */,
 				AF975417299AEEAF00F79211 /* GroupController.swift in Sources */,
-				AF97542B299C3A2D00F79211 /* PeopleTableViewCell.swift in Sources */,
+				AF97542B299C3A2D00F79211 /* PersonTableViewCell.swift in Sources */,
 				AF975422299B036200F79211 /* GroupTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

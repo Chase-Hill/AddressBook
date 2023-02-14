@@ -7,7 +7,11 @@
 
 import UIKit
 
-class PeopleTableViewCell: UITableViewCell {
+protocol PersonTableViewCellDelegate: AnyObject {
+    func toggleFavoriteButtonTapped(cell: PersonTableViewCell)
+}
+
+class PersonTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     
@@ -16,6 +20,8 @@ class PeopleTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     // MARK: - Properties
+    
+    weak var delegate: PersonTableViewCellDelegate?
     
     var person: Person? {
         didSet {
@@ -39,7 +45,6 @@ class PeopleTableViewCell: UITableViewCell {
     // MARK: - Action
     
     @IBAction func favoriteButtonTapped(_ sender: Any) {
-        
+        delegate?.toggleFavoriteButtonTapped(cell: self)
     }
-    
 }
