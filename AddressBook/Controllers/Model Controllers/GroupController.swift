@@ -14,7 +14,7 @@ class GroupController {
     static let sharedInstance = GroupController()
     
     ///Source of Truth
-    
+
     var groups: [Group] = []
     
     // MARK: - Initializers
