@@ -140,12 +140,40 @@
                     <view key="view" contentMode="scaleToFill" id="6rx-Y1-c8s">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3Y-WB-HD3">
+                                <rect key="frame" x="8" y="111" width="377" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W5m-hO-kFL">
+                                <rect key="frame" x="8" y="153" width="377" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LbO-zT-AZd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X3Y-WB-HD3" firstAttribute="top" secondItem="LbO-zT-AZd" secondAttribute="top" constant="8" id="IGx-CC-XrU"/>
+                            <constraint firstItem="LbO-zT-AZd" firstAttribute="trailing" secondItem="X3Y-WB-HD3" secondAttribute="trailing" constant="8" id="Sh6-Ti-7Ud"/>
+                            <constraint firstItem="W5m-hO-kFL" firstAttribute="top" secondItem="X3Y-WB-HD3" secondAttribute="bottom" constant="8" id="jkL-FU-MKj"/>
+                            <constraint firstItem="X3Y-WB-HD3" firstAttribute="leading" secondItem="LbO-zT-AZd" secondAttribute="leading" constant="8" id="m1B-Qn-Gs5"/>
+                            <constraint firstItem="LbO-zT-AZd" firstAttribute="trailing" secondItem="W5m-hO-kFL" secondAttribute="trailing" constant="8" id="oaP-M1-VwY"/>
+                            <constraint firstItem="W5m-hO-kFL" firstAttribute="leading" secondItem="LbO-zT-AZd" secondAttribute="leading" constant="8" id="orB-p4-NqN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E0c-NQ-2GK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="N2a-NS-kfO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="N2a-NS-kfO">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="ogI-pH-O3g" id="BSl-Pu-dcW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contactAddressTextField" destination="W5m-hO-kFL" id="rGo-5j-LXk"/>
+                        <outlet property="contactNameTextField" destination="X3Y-WB-HD3" id="FmM-IH-m6K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ce-RM-BUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

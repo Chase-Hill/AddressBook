@@ -9,22 +9,39 @@ import UIKit
 
 class ContactViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var personObjectReciever: Person?
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var contactNameTextField: UITextField!
+    
+    @IBOutlet weak var contactAddressTextField: UITextField!
+    
+    // MARK: - LifeCycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
     }
     
-    var personObjectReciever: Person?
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViews()
     }
-    */
-
+    
+    func updateViews() {
+        guard let person = personObjectReciever else {return}
+        contactNameTextField.text = person.name
+        contactAddressTextField.text = person.address
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let person = personObjectReciever,
+              let name = contactNameTextField.text,
+              let address = contactAddressTextField.text else {return}
+        PersonController.updatePerson(personToUpdate: person, newName: name, newAddress: address)
+        navigationController?.popViewController(animated: true)
+    }
 }
